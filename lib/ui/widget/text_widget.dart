@@ -22,8 +22,10 @@ class TextValue extends StatelessWidget {
   const TextValue({
     super.key,
     required this.text,
+    this.textAlign,
   });
   final String text;
+  final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class TextValue extends StatelessWidget {
       style: const TextStyle(
         fontWeight: FontWeight.w500,
       ),
+      textAlign: textAlign,
     );
   }
 }

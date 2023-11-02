@@ -141,13 +141,25 @@ class DetailPage extends StatelessWidget {
                                   ),
                                 ],
                               ).pOnly(top: 30).px12(),
-                              TabBarView(
-                                controller: controller.tabController,
-                                children: const [
-                                  TabAbout(),
-                                  TabBaseStats(),
-                                  TabEvolution(),
-                                  TabMoves(),
+                              Stack(
+                                children: [
+                                  CircleBackground(
+                                    height: 240,
+                                    width: 240,
+                                    color: Colors.grey.shade100,
+                                  ).positioned(
+                                    right: -0,
+                                    top: 120,
+                                  ),
+                                  TabBarView(
+                                    controller: controller.tabController,
+                                    children: const [
+                                      TabAbout(),
+                                      TabBaseStats(),
+                                      TabEvolution(),
+                                      TabMoves(),
+                                    ],
+                                  ),
                                 ],
                               ).expand(),
                             ],
@@ -164,7 +176,7 @@ class DetailPage extends StatelessWidget {
                         builder: (context, snapshot) {
                           return AnimatedPositioned(
                             duration: const Duration(seconds: 1),
-                            top: snapshot.data ?? true ? 100 : 110,
+                            top: snapshot.data ?? true ? 100 : 105,
                             left: 0,
                             right: 0,
                             child: SvgPicture.network(

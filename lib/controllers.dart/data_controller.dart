@@ -33,22 +33,20 @@ class DataController extends GetxController with GetTickerProviderStateMixin {
     var response = await BaseApi.getData();
 
     if (response != null) {
-      return response;
+      var result = Data.fromJson(response.data);
+      return result;
     } else {
       return null;
     }
   }
 
   Future<Pokemon?> getDetail(int id) async {
-    debugPrint('test');
     var response = await BaseApi.getDetail(id);
-    debugPrint('test 2');
 
     if (response != null) {
-      debugPrint('test 3');
-      return response;
+      var result = Pokemon.fromJson(response.data);
+      return result;
     } else {
-      debugPrint('test 4');
       return null;
     }
   }

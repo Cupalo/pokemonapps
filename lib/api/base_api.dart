@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:get/route_manager.dart';
-import 'package:pokemonapps/models/items.dart';
-import 'package:pokemonapps/models/pokemon.dart';
 
 class BaseApi {
   static Dio dio = Dio();
@@ -29,27 +27,15 @@ class BaseApi {
     }
   }
 
-  static Future<Data?> getData() async {
-    var response = await handleApi(
-      dio.get(baseApi),
-    );
+  static Future<Response<dynamic>?> getData() async {
+    var response = await handleApi(dio.get(baseApi));
 
-    if (response != null) {
-      var list = Data.fromJson(response.data);
-      return list;
-    } else {
-      return null;
-    }
+    return response;
   }
 
-  static Future<Pokemon?> getDetail(int id) async {
+  static Future<Response<dynamic>?> getDetail(int id) async {
     var response = await handleApi(dio.get('$baseApi$id'));
 
-    if (response != null) {
-      var list = Pokemon.fromJson(response.data);
-      return list;
-    } else {
-      return null;
-    }
+    return response;
   }
 }

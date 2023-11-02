@@ -46,6 +46,8 @@ class TabEvolution extends GetView<DataController> {
     final color = controller.listColor.value?[controller.selectedId.value - 1];
 
     return Container(
+      height: 120,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: color?.withOpacity(0.5),
@@ -71,13 +73,31 @@ class TabEvolution extends GetView<DataController> {
               ).positioned(
                 right: 0,
                 left: 0,
-                top: 40,
+                top: 20,
               ),
-              SvgPicture.network(
-                Helper().getImage(value),
-                height: 120,
-                width: 120,
-              ).p4(),
+              StreamBuilder<bool>(
+                initialData: true,
+                stream: Stream.periodic(
+                  const Duration(seconds: 1),
+                  (computationCount) {
+                    return (computationCount % 2 == 0 || computationCount == 0);
+                  },
+                ),
+                builder: (context, snapshot) {
+                  return AnimatedPositioned(
+                    duration: const Duration(seconds: 1),
+                    bottom: snapshot.data ?? true ? 0 : -2,
+                    left: 0,
+                    right: 0,
+                    child: SvgPicture.network(
+                      Helper().getImage(value),
+                      height: 110,
+                      width: 110,
+                      alignment: Alignment.bottomRight,
+                    ).p4(),
+                  );
+                },
+              ),
             ],
           ).expand(),
         ],

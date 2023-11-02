@@ -94,7 +94,7 @@ class ListData extends StatelessWidget {
                         builder: (context, snapshot) {
                           return AnimatedPositioned(
                             duration: const Duration(seconds: 1),
-                            bottom: snapshot.data ?? true ? 5 : 0,
+                            bottom: snapshot.data ?? true ? 3 : 0,
                             left: 0,
                             right: 0,
                             child: SvgPicture.network(

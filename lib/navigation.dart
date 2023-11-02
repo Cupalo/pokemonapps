@@ -11,7 +11,7 @@ class Navigation extends StatelessWidget {
 
   final List<Widget> listItems = [
     Home(),
-    const ValidatorName(),
+    ValidatorName(),
   ];
 
   @override
