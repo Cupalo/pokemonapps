@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:get/route_manager.dart';
-// import 'package:get/get.dart';
 import 'package:pokemonapps/models/items.dart';
 import 'package:pokemonapps/models/pokemon.dart';
 
@@ -16,14 +14,7 @@ class BaseApi {
     try {
       var response = await dio;
 
-      if (kDebugMode) {
-        print('Status Code : ${response.statusCode}');
-      }
-
       if (response.statusCode == 200) {
-        if (kDebugMode) {
-          print(response);
-        }
         var result = response;
         return result;
       } else {
@@ -34,9 +25,6 @@ class BaseApi {
       return null;
     } catch (e) {
       Get.snackbar('Get Data', e.toString());
-      if (kDebugMode) {
-        print(e.toString());
-      }
       return null;
     }
   }

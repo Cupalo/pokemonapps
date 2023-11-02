@@ -13,7 +13,6 @@ class TabBaseStats extends StatelessWidget {
     final pokemon = controller.pokemon.value;
     return ListView(
       shrinkWrap: true,
-      // physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(
         vertical: 12,
         horizontal: 20,
@@ -51,7 +50,8 @@ class TabBaseStats extends StatelessWidget {
               color: Colors.grey,
               backgroundColor: Colors.grey.shade300,
               valueColor: AlwaysStoppedAnimation(
-                  valueProgres > half ? Colors.green : Colors.red),
+                valueProgres > half ? Colors.green : Colors.red,
+              ),
             ).px12().expand(flex: 6),
           ],
         ).expand(flex: 2),

@@ -50,6 +50,13 @@ class BaseTheme {
           color: textColor,
           fontWeight: FontWeight.bold,
           fontSize: 30,
+          shadows: [
+            Shadow(
+              color: textColor?.withOpacity(0.4) ?? Colors.red.shade200,
+              blurRadius: 1,
+              offset: const Offset(2, 2),
+            ),
+          ],
         ),
       ),
     );

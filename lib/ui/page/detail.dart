@@ -27,20 +27,6 @@ class DetailPage extends StatelessWidget {
     final color = controller.listColor.value?[controller.selectedId.value - 1];
     return Scaffold(
       backgroundColor: color,
-      // appBar: AppBar(
-      //   leading: const Icon(
-      //     Icons.keyboard_backspace,
-      //   ).onTap(() {
-      //     Get.back();
-      //   }),
-      //   actions: [
-      //     const Icon(
-      //       Icons.favorite_outline,
-      //     ).px12()
-      //   ],
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      // ),
       body: FutureBuilder<Pokemon?>(
           future: controller.getDetail(id),
           builder: (context, snapshot) {
@@ -51,11 +37,6 @@ class DetailPage extends StatelessWidget {
             if (snapshot.data == null) return Container();
             controller.pokemon.value = snapshot.data;
             var pokemon = controller.pokemon.value;
-            // var timer = Timer.periodic(Duration(seconds: duration), (timer) {
-            //   debugPrint('tick : ${timer.tick}');
-            //   debugPrint('tick : ${timer.tick}');
-            //   controller.isAnimate.value = timer.tick % 2 == 0;
-            // });
 
             return SingleChildScrollView(
               child: Column(
@@ -195,17 +176,6 @@ class DetailPage extends StatelessWidget {
                           );
                         },
                       )
-                      // Column(
-                      //   crossAxisAlignment: CrossAxisAlignment.center,
-                      //   mainAxisAlignment: MainAxisAlignment.start,
-                      //   children: [
-                      //     SvgPicture.network(
-                      //       Helper().getImage(id),
-                      //       height: 250,
-                      //       width: 250,
-                      //     ).pOnly(top: 100),
-                      //   ],
-                      // ).w(double.infinity),
                     ],
                   ),
                 ],

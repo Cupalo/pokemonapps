@@ -61,16 +61,17 @@ class ListData extends StatelessWidget {
                           child: Text(
                             (item.name ?? '-').capitalized,
                             style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: Get.width * 0.05,
-                                letterSpacing: 1.5,
-                                shadows: const [
-                                  Shadow(
-                                    color: Colors.black,
-                                    offset: Offset(1, 1),
-                                  ),
-                                ]),
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: Get.width * 0.05,
+                              letterSpacing: 1.5,
+                              shadows: const [
+                                Shadow(
+                                  color: Colors.black,
+                                  offset: Offset(0.5, 0.5),
+                                ),
+                              ],
+                            ),
                           ).py8().px12(),
                         ),
                       ),

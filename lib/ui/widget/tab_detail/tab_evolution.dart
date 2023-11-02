@@ -13,7 +13,6 @@ class TabEvolution extends GetView<DataController> {
   });
   @override
   Widget build(BuildContext context) {
-    // final pokemon = controller.pokemon.value;
     final listPokemon = controller.listPokemon.value?.results;
     final id = controller.selectedId.value;
     var evo = 0;
@@ -30,7 +29,6 @@ class TabEvolution extends GetView<DataController> {
 
     return ListView(
       shrinkWrap: true,
-      // physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(
         vertical: 22,
         horizontal: 20,
@@ -40,9 +38,6 @@ class TabEvolution extends GetView<DataController> {
         if (isEnable(evo2 - 1))
           buildItem((listPokemon?[evo2 - 1].name), evo2, isReverse: true),
         if (isEnable(evo3 - 1)) buildItem((listPokemon?[evo3 - 1].name), evo3),
-        // buildItem('Evolution 1', id - evo),
-        // buildItem('Evolution 2', id - evo + 1),
-        // buildItem('Evolution 3', id - evo + 2),
       ],
     );
   }
@@ -66,9 +61,6 @@ class TabEvolution extends GetView<DataController> {
             ),
             textAlign: TextAlign.center,
           ).expand(),
-          // TextTitle(
-          //   text: (title ?? '').capitalized,
-          // ).expand(),
           Stack(
             textDirection: isReverse ? TextDirection.rtl : null,
             alignment: Alignment.center,

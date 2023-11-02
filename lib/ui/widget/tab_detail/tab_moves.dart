@@ -14,7 +14,6 @@ class TabMoves extends StatelessWidget {
     final color = controller.listColor.value?[controller.selectedId.value - 1];
     return ListView(
       shrinkWrap: true,
-      // physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(
         vertical: 12,
         horizontal: 20,
@@ -26,7 +25,6 @@ class TabMoves extends StatelessWidget {
             color: color?.withOpacity(0.5),
           ),
           child: TextValue(text: e.capitalized).centered().p8(),
-          // child: buildText('Move ${index + 1}', e),
         ).py2();
       }).toList(),
     );

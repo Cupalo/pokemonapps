@@ -14,7 +14,6 @@ class TabAbout extends StatelessWidget {
     var pokemon = controller.pokemon.value;
     return ListView(
       shrinkWrap: true,
-      // physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(
         vertical: 12,
         horizontal: 20,
@@ -32,10 +31,6 @@ class TabAbout extends StatelessWidget {
                         element.capitalized +
                         (element == pokemon.abilities?.last ? '' : ', ')) ??
                 ''),
-        // const TextCategory(text: 'Breeding').pOnly(top: 16, bottom: 8),
-        // buildText('Gender', pokemon?.height ?? ''),
-        // buildText('Egg Group', pokemon?.height ?? ''),
-        // buildText('Egg Cycle', pokemon?.height ?? ''),
       ],
     );
   }
